@@ -8,6 +8,24 @@ let randomInt = getRandomArbitrary(10);
 console.log(randomInt);
 let password = number[randomInt];
 
+// Sets criteria for password (object):
+
+let passwordCriteria = {
+
+  //Sets property:value for password length:
+  passwordLength: 0
+
+  //TODO: add property:value for password Numbers
+  //TODO: add property:value for password specialCharacters
+  //TODO: add property:value for password alphaLower
+  //TODO: add property:value for password alphaUpper
+
+
+
+}
+
+
+
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
@@ -23,11 +41,13 @@ function getRandomArbitrary(max) {
   return Math.floor(Math.random() * max); // generates random 
 }
 
-// Write password to the #password input
+// Write password to the #password input of index.html file
 function writePassword() {
   let password = generatePassword();
-  let passwordText = document.querySelector("#password");
 
+  // Sets ID of the password writting passwordText = to the textArea in index.html file
+  let passwordText = document.querySelector("#password");
+  // Updates the textArea with a new password
   passwordText.value = password;
 
 }
