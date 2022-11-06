@@ -86,7 +86,7 @@ function generatePassword() {
 // Load characters:
 passwordLength = 0;
 passwordParameter.passwordLength = 0;
-result = "";
+passwordResult = "";
 
 // Quality control test for password parameters: 
 // TODO: add all the while, if, else, and return statement for each parameter condition
@@ -94,6 +94,8 @@ result = "";
 
 // Returns the password from the sausage casing back to the call function
 //  TODO: add - "return result;""
+return passwordResult;
+
 
 // Sausage making process functions that displays user parameter selection prompts;
 // TODO: add function to show user prompts - use function showPrompts() {........} and confirm
