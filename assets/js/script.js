@@ -6,19 +6,25 @@ let generateBtn = document.querySelector("#generate");
 
 // Global Variables
 
-// This is my database: numbers, special characters, lowercase letters, uppercase letters
-let number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']; // create a number array with elements (numbers) 0-9
+// This is my database: numbers, lowercase letters, uppercase letters, special characters
+// parameter array for numbers - let passwordNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']; 
+// parameter array for lowercase letters - let passwordLowerChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];,
+// parameter array for uppercase letters - let passwordUpperChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+// parameter array for Special Characters - let passwordSpecialChars = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
+
 
 // Creates a password object:
 
 let passwordParameter = {
 
   // Sets property:value for password length:
-  passwordLength: 0
+  passwordLength: 0,
 
   // TODO: add property:value arrays for password numbers 0 - 9 (passwordNumbers)
-  // use - let passwordNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];,
-  let passwordNumbers =["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  // use - let passwordNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];,
+
+  // Sausage casing array that holds numbers parameter:
+  passwordNumbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   // TODO: add property:value arrays for password special characters (passwordSpecialChars)
   // use - let passwordSpecialChars = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];,
@@ -70,6 +76,7 @@ function generatePassword() {
 
   let passwordLength = 0;
   // TODO: add the following user prompt - "let numbers;""
+  let numbers;
   // TODO: add the following user prompt - "let upperCase;""
   // TODO: add the following user prompt - "let lowerCase;""
   // TODO: add the following user prompt - "let specialChars;""
