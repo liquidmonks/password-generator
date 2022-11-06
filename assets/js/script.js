@@ -17,7 +17,8 @@ let passwordParameter = {
   passwordLength: 0
 
   // TODO: add property:value arrays for password numbers 0 - 9 (passwordNumbers)
-  //  use - let passwordNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];,
+  // use - let passwordNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];,
+  let passwordNumbers =["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   // TODO: add property:value arrays for password special characters (passwordSpecialChars)
   // use - let passwordSpecialChars = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];,
@@ -28,7 +29,6 @@ let passwordParameter = {
   // TODO: add property:value arrays for password alphabet upper characters (passwordUpperChars)
   // user - let passwordUpperChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 }
-
 
 
 // This function will generate the password and return it to the correct password
