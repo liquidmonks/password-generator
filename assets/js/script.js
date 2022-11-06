@@ -97,3 +97,7 @@ result = "";
 
 // Sausage making process functions that displays user parameter selection prompts;
 // TODO: add function to show user prompts - use function showPrompts() {........} and confirm
+
+function showPrompts() {
+  numbers = confirm("Do you want to include numbers in your password?")
+}
