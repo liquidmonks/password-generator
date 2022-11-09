@@ -5,7 +5,7 @@
 // This is my database: numbers, lowercase letters, uppercase letters, special characters
 // * parameter array for numbers - let arrayNumber = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 // * parameter array for lowercase letters - let arrayLowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];,
-// * parameter array for uppercase letters - let passUpperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+// * parameter array for uppercase letters - let arrayUpperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 // * parameter array for Special Characters - let passSpecialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
 
 // Assignment Code
@@ -25,8 +25,8 @@ let passParameter = {
   // TODO: add property:value arrays for password alphabet lower characters (arrayLowerChar),
   // use - arrayLowerChar:["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];,
 
-  // TODO: add property:value arrays for password alphabet upper characters (passUpperChar)
-  // use - passUpperChar: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  // TODO: add property:value arrays for password alphabet upper characters (arrayUpperChar)
+  // use - arrayUpperChar: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 };
 
 // Write password to the #password input of index.html file
