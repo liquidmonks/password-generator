@@ -6,7 +6,7 @@
 // * parameter array for numbers - let arrayNumber = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 // * parameter array for lowercase letters - let arrayLowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];,
 // * parameter array for uppercase letters - let arrayUpperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-// * parameter array for Special Characters - let passSpecialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
+// * parameter array for Special Characters - let arraySpecialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
 
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
@@ -20,7 +20,7 @@ let passParameter = {
   arrayNumber: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], // Array holds numbers values
 
   // Sausage casing array that holds password special characters parameter:
-  passSpecialChar: ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?", "~"], // Array holds special characters values
+  arraySpecialChar: ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?", "~"], // Array holds special characters values
 
   // TODO: add property:value arrays for password alphabet lower characters (arrayLowerChar),
   // use - arrayLowerChar:["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];,
@@ -104,7 +104,7 @@ function generatePassword() {
               randomly grab a number from the array and add it to the end of passResult
               update passLength by 1*/
               if (specialChar === true && passParameter.passLength < passwordLength) {
-                let special = passParameter.passSpecialChar[Math.floor(Math.random() * 32)]; // 32 is the number of special characters available
+                let special = passParameter.arraySpecialChar[Math.floor(Math.random() * 32)]; // 32 is the number of special characters available
                 passResult = passResult + special;
                 passParameter.passLength++; // ++ adds 1
               }
