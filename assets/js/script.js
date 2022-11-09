@@ -17,10 +17,9 @@ let passParameter = {
   passLength: 0,
 
   // Sausage casing array that holds password numbers parameter:
-  passNumber: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  passNumber: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], // Array holds numbers values
 
-  // TODO: add property:value arrays for password special characters (passSpecialChar)
-  // use - passSpecialChar: ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];,
+  // Sausage casing array that holds password special characters parameter:
   passSpecialChar: ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?", "~"], // Array holds special characters values
 
   // TODO: add property:value arrays for password alphabet lower characters (passLowerChar),
@@ -52,13 +51,10 @@ function generatePassword() {
 
   // Password variable that records an input from the user:
   let passwordLength = 0;
-
-  // TODO: add the following user prompt - "let numbers;""
   let numbers;
-
+  let specialChar;
   // TODO: add the following user prompt - "let upperCase;""
   // TODO: add the following user prompt - "let lowerCase;""
-  // TODO: add the following user prompt - "let specialChar;""
 
   //initialize characters
   passwordLength = 0;
@@ -66,12 +62,13 @@ function generatePassword() {
   passResult = "";
 
   // Quality control test for password parameters:
-  // TODO: add all the while, if, else, and return statement for each parameter condition
+
   while (passwordLength < 8 || passwordLength > 128) {
+    // This validates the length of the password
     passwordLength = prompt("How many characters do you want your password to be? \nPassword must be between 8 and 128 characters.");
 
-    // TODO: add an if statement if user cancels prompt, then return a confirmation statement
     if (passwordLength === null) {
+      // This returns a confirmation statement if the user chooses to cancel a choice selection option
       return "Your secure password";
     } else {
       // validates that user has entered an integer
@@ -90,44 +87,29 @@ function generatePassword() {
           //         continues to add parameters until passwordLength = user entered value
           while (passParameter.passLength < passwordLength) {
             //if statement to make sure the user selects at least one of the criteria
-            if (numbers === false) {
-              alert("You have selected numbers");
+            if (numbers === false && specialChar === false) {
+              alert("Please select at least one parameter of numbers or special characters");
               showPrompts();
-            }
+            } else {
+              /*if the user selected a number and there is still room to add characters then
+              randomly grab a number from the array and add it to the end of passResult
+              update passLength by 1*/
+              if (numbers === true && passParameter.passLength < passwordLength) {
+                let num = passParameter.passNumber[Math.floor(Math.random() * 10)];
+                passResult = passResult + num;
+                passParameter.passLength++;
+              }
 
-            //if the user selected a number and there is still room to add characters then
-            //randomly grab a number from the array and add it to the end of passResult
-            //update passLength by 1
-            if (numbers === true && passParameter.passLength < passwordLength) {
-              let num = passParameter.passNumber[Math.floor(Math.random() * 10)];
-              passResult = passResult + num;
-              passParameter.passLength++;
+              /*if the user selected a number and there is still room to add characters then
+              randomly grab a number from the array and add it to the end of passResult
+              update passLength by 1*/
+              if (specialChar === true && passParameter.passLength < passwordLength) {
+                let special = passParameter.passSpecialChar[Math.floor(Math.random() * 32)]; // 32 is the number of special characters available
+                passResult = passResult + special;
+                passParameter.passLength++; // ++ adds 1
+              }
 
-              // TODO: add an else/if statement that validates whether the user enters a number, then return a confirmation statement
-
-              // TODO: add an else if statement that validates password length criteria, then return a confirmation statement
-
-              // TODO: add an else statement that calls the sausage making function to display prompts for the password parameters (showPrompts())
-
-              // TODO: add while statement that continues to add characters until it meets the user password length selection
-
-              // TODO: add an if statement to ensure user selects a minimum of one parameter (from parameter variable set), then alert and show prompts
-
-              // TODO: add an else statement where generator adds an extra character if the user selects a lower case parameter
-
-              // TODO: add an let statement where the program does math and concat passwordParameter + passwordLength
-
-              // TODO: add an if statement where generator adds an extra character if the user selects an upper case parameter
-
-              // TODO: add a let declaration statement where the program does math and concat passwordParameter + passwordLength
-
-              // TODO: add an if statement where generator adds an extra character if the user selects a special character parameter
-
-              // TODO: add a let declaration statement where program does math and contact passwordParameter + passwordLength
-
-              // TODO: add an if statement where generator adds an extra character if the user selects a number parameter
-
-              // TODO: add a let declaration statement where program does math and contact passwordParameter + passwordLength
+              // TODO: add if statements for upperChar and lowerChar
             }
           }
         }
@@ -135,14 +117,13 @@ function generatePassword() {
     }
 
     // Returns the password from the sausage casing back to the call function
-    //  TODO: add - "return passResult;""
-    //return the generated password back to the calling function
-    return passResult;
+    return passResult; //return the generated password back to the calling function
 
     // Sausage making process functions that displays user parameter selection prompts;
-    // TODO: add function to show user prompts - use function showPrompts() {........} and confirm
     function showPrompts() {
+      // Presents the user with the questions
       numbers = confirm("Do you want to include numbers?");
+      specialChar = confirm("Do you want to include special characters?");
     }
   }
 }
