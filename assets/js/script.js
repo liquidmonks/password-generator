@@ -20,7 +20,7 @@ let passParameter = {
   arrayNumber: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], // Array holds numbers values
 
   // Sausage casing array that holds password special characters parameter:
-  arraySpecialChar: ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?", "~"], // Array holds special characters values
+  arraySpecialChar: ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?", "~"], // Array holds 13 special characters values]
 
   // TODO: add property:value arrays for password alphabet lower characters (arrayLowerChar),
   // use - arrayLowerChar:["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];,
@@ -104,12 +104,13 @@ function generatePassword() {
               randomly grab a number from the array and add it to the end of passResult
               update passLength by 1*/
               if (specialChar === true && passParameter.passLength < passwordLength) {
-                let special = passParameter.arraySpecialChar[Math.floor(Math.random() * 32)]; // 32 is the number of special characters available
+                let special = passParameter.arraySpecialChar[Math.floor(Math.random() * 13)]; // 13 is the number of special characters available
                 passResult = passResult + special;
                 passParameter.passLength++; // ++ adds 1
               }
 
-              // TODO: add if statements for upperChar and lowerChar
+              // TODO: add if statements for upperChar
+              // TODO: add if statements for lowerChar
             }
           }
         }
