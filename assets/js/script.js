@@ -7,7 +7,7 @@ let generateBtn = document.querySelector("#generate");
 let passParameter = {
   passLength: 0, // Sets property:value for password length:
 
-  // Global Variables
+  // ----Global Variables----
   // This is my database: numbers, lowercase letters, uppercase letters, special characters
 
   // Sausage casing array that holds password numbers parameter:
@@ -18,7 +18,7 @@ let passParameter = {
 
   arrayLowerCase: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], // 26 characters,
 
-  // TODO: uncomment the following - arrayUpperCase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] // 26 characters;
+  arrayUpperCase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"], // 26 characters;
 };
 
 // This function writes a password to the #password input of index.html file
@@ -41,12 +41,12 @@ function generatePassword() {
   // This is the sausage casing that temporarily holds the password the generator outputs to the user:
   let passResult = "";
 
-  // These is the password variables that records a response from the user:
+  // These are the password variables that records a response from the user:
   let passwordLength = 0;
   let numbers;
   let specialChar;
   let lowerCase;
-  // TODO: uncomment the following - let upperCase;
+  let upperCase;
 
   //initialize characters
   passwordLength = 0;
@@ -80,7 +80,7 @@ function generatePassword() {
           //         continues to add parameters until passwordLength = user entered value
           while (passParameter.passLength < passwordLength) {
             //if statement to make sure the user selects at least one of the criteria
-            if (numbers === false && specialChar === false && lowerCase === false /*&& upperCase === false*/) {
+            if (numbers === false && specialChar === false && lowerCase === false && upperCase === false) {
               alert("Please select at least one parameter of numbers or special characters");
               showPrompts();
             } else {
@@ -111,17 +111,15 @@ function generatePassword() {
                 passParameter.passLength++; // ++ adds 1
               }
 
-              /* TODO: uncomment the following - 
-
+              /* 
               if the user selected a upper case character and there is still room to add characters then
               randomly grab a upper case character from the array and add it to the end of passResult
-              update passLength by 1
+              update passLength by 1*/
               if (upperCase === true && passParameter.passLength < passwordLength) {
                 let upper = passParameter.arrayUpperCase[Math.floor(Math.random() * 26)]; // 26 is the number of upper characters available
                 passResult = passResult + upper;
                 passParameter.passLength++; // ++ adds 1
               }
-*/
             }
           }
         }
@@ -134,10 +132,10 @@ function generatePassword() {
     // Sausage making process functions that displays user parameter selection prompts;
     function showPrompts() {
       // Presents the user with the questions
-      numbers = confirm("Do you want to include numbers?");
-      specialChar = confirm("Do you want to include special characters?");
-      lowerCase = confirm("Do you want to include lower case characters?");
-      // TODO: uncomment the following - upperCase = confirm("Do you want to include upper case characters?");
+      numbers = confirm("Do you want to include numbers?"); // passes a number through the function when the user selects this variable as a choice.
+      specialChar = confirm("Do you want to include special characters?"); // passes a special character through the function when the user selects this variable as a choice.
+      lowerCase = confirm("Do you want to include lower case characters?"); // passes a lower case character through the function when the user selects this variable as a choice.
+      upperCase = confirm("Do you want to include upper case characters?"); // passes an upper case character through the function when the user selects this variable as a choice.
     }
   }
 }
