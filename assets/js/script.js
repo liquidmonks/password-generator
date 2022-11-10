@@ -69,7 +69,7 @@ function generatePassword() {
         alert("You did not enter a number");
         return "Your secure password";
       } else {
-        //       validates password meets length parameter
+        // validates password meets length parameter
         if (passwordLength < 8 || passwordLength > 128) {
           alert("Password must be between 8 and 128 characters.");
           return "Your secure password";
@@ -77,9 +77,9 @@ function generatePassword() {
           //call the internal function to show prompts for criteria
           showPrompts();
 
-          //         continues to add parameters until passwordLength = user entered value
+          // continues to add parameters until passwordLength = user entered value
           while (passParameter.passLength < passwordLength) {
-            //if statement to make sure the user selects at least one of the criteria
+            // if statement to make sure the user selects at least one of the criteria
             if (numbers === false && specialChar === false && lowerCase === false && upperCase === false) {
               alert("Please select at least one parameter of numbers or special characters");
               showPrompts();
