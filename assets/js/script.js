@@ -16,7 +16,7 @@ let passParameter = {
   // Sausage casing array that holds password special characters parameter:
   arraySpecialChar: ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?", "~"], // Array holds 13 special characters values]
 
-  // TODO: uncomment the following - arrayLowerCase:["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; // 26 characters,
+  arrayLowerCase: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], // 26 characters,
 
   // TODO: uncomment the following - arrayUpperCase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] // 26 characters;
 };
@@ -45,8 +45,8 @@ function generatePassword() {
   let passwordLength = 0;
   let numbers;
   let specialChar;
+  let lowerCase;
   // TODO: uncomment the following - let upperCase;
-  // TODO: uncomment the following - let lowerCase;
 
   //initialize characters
   passwordLength = 0;
@@ -65,6 +65,7 @@ function generatePassword() {
     } else {
       // validates that user has entered an integer
       if (!isFinite(passwordLength)) {
+        // Checks if the passed value is NOT a finite number | finite number = false (!)
         alert("You did not enter a number");
         return "Your secure password";
       } else {
@@ -79,7 +80,7 @@ function generatePassword() {
           //         continues to add parameters until passwordLength = user entered value
           while (passParameter.passLength < passwordLength) {
             //if statement to make sure the user selects at least one of the criteria
-            if (numbers === false && specialChar === false /*lowerCase === false && upperCase === false*/) {
+            if (numbers === false && specialChar === false && lowerCase === false /*&& upperCase === false*/) {
               alert("Please select at least one parameter of numbers or special characters");
               showPrompts();
             } else {
@@ -101,17 +102,14 @@ function generatePassword() {
                 passParameter.passLength++; // ++ adds 1
               }
 
-              /* TODO: uncomment the following - 
-
-              if the user selected a lower case character and there is still room to add characters then
+              /*if the user selected a lower case character and there is still room to add characters then
               randomly grab a lower case character from the array and add it to the end of passResult
-              update passLength by 1
+              update passLength by 1*/
               if (lowerCase === true && passParameter.passLength < passwordLength) {
                 let lower = passParameter.arrayLowerCase[Math.floor(Math.random() * 26)]; // 26 is the number of lower characters available
                 passResult = passResult + lower;
                 passParameter.passLength++; // ++ adds 1
               }
-*/
 
               /* TODO: uncomment the following - 
 
@@ -138,7 +136,7 @@ function generatePassword() {
       // Presents the user with the questions
       numbers = confirm("Do you want to include numbers?");
       specialChar = confirm("Do you want to include special characters?");
-      // TODO: uncomment the following - lowerCase = confirm("Do you want to include lower case characters?");
+      lowerCase = confirm("Do you want to include lower case characters?");
       // TODO: uncomment the following - upperCase = confirm("Do you want to include upper case characters?");
     }
   }
