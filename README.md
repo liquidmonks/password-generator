@@ -1,14 +1,11 @@
-
 # Strong Password Generator
 
 User interactive strong and secure random password generator
 
-
-
 ## Strong Password Generator Function:
 
-- User requests a new, secure password
-- User clicks the Generate Password button to generate a password
+- User requests a new secure password
+- User clicks the red Generate Password button to generate a password
 - User is presented with a series of prompts for password criteria
 - User is prompted for password criteria
 - User selects which criteria to include in the password
@@ -20,16 +17,14 @@ User interactive strong and secure random password generator
 - User inputs should be validated and at least one character type should be selected
 - User answers all prompts
 - Generator outputs a password that matches the selected criteria
-- Password is written insider the generator field
-
-
+- Password is written inside the generator field
 
 ## Screenshots
 
 ![App Screenshot](https://github.com/liquidmonks/passwordgenerator/blob/main/assets/images/passwordgenerator.png)
 
-
 ## 🔗 Live Site Link
+
 [![Live Site](https://img.shields.io/badge/livesite-click-orange)](https://https://liquidmonks.github.io/passwordgenerator//)
 
 ## Tech Stack
@@ -38,16 +33,12 @@ User interactive strong and secure random password generator
 
 **Server:** Visual Studio Code
 
-
 ## Authors
 
 - [@liquidmonks](https://www.github.com/liquidmonks)
 
-
 ![Logo](https://i.imgur.com/MrXyBQy.png)
-
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
