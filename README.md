@@ -25,7 +25,7 @@ User interactive strong and secure random password generator
 
 ## 🔗 Live Site Link
 
-[![Live Site](https://img.shields.io/badge/livesite-click-orange)](https://https://liquidmonks.github.io/passwordgenerator//)
+[![Live Site](https://img.shields.io/badge/livesite-click-orange)](https://liquidmonks.github.io/passwordgenerator/)
 
 ## Tech Stack
 
